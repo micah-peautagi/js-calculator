@@ -1,5 +1,6 @@
 $(document).ready(function()){
-    // stores the inputs from the user to calculate later          
+
+    // stores the inputs from the user to calculate after          
    var inputs=[""];
    
    //string to store current input string
@@ -15,14 +16,16 @@ $(document).ready(function()){
    
    // Numbers for validation
    var nums = [0,1,2,3,4,5,6,7,8,9];
+
+
    
    // updates all our stuff and has one parameter input
    function getValue(input){
-     if(operators2.includes(inputs[inputs.length-1]===true && input===".")){
+     if(operators.includes(inputs[inputs.length-1]===true && input===".")){
        console.log("Duplicate '.' ");
      }
      //don't want it to start with a dot or operator or for there to be multiple operators
-     else if (inputs.length===1 && operators1.includes(input)===false){
+     else if (inputs.length===1 && operator.includes(input)===false){
        inputs.push(input);
        
      }
@@ -40,12 +43,12 @@ $(document).ready(function()){
    function update(){
      //makes totalString equal to inputs array but join it so that its a string
      totalString = inputs.join("")
-     $("numbers").html(totalString);
+     $("#numbers").html(totalString);
    }
    
    function getTotal(){
      totalString = inputs.join("");
-     $("numbers").html(eval(totalString));
+     $("#numbers").html(eval(totalString));
      
    }
    
@@ -60,6 +63,7 @@ $(document).ready(function()){
       
      }
       
+     //if this id is equal to "clearOne" remove last number.
     else if (this.id==="clearOne"){
       inputs.pop();
       update();
@@ -82,8 +86,7 @@ $(document).ready(function()){
    });
    
    
-                     
-                     });
+  update()         
 
                     
 
